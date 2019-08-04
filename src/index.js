@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter,Route,Link} from 'react-router-dom';
+import {BrowserRouter,Route} from 'react-router-dom';
 import Welcome from './components/Welcome';
 import * as serviceWorker from './serviceWorker';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Article from './components/Article';
+import CreateArticle from './components/CreateArticle';
 
 const home =()=>{
 
@@ -23,6 +23,7 @@ ReactDOM.render(
     <Route exact path="/" component={Welcome}/>
     <Route path="/about" component={about}/>
     <Route path="/home" component={home}/>
+    <Route path="/article/create" component={CreateArticle}/>
      <Footer/>
     </div>
     </BrowserRouter>
