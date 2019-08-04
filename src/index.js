@@ -8,24 +8,15 @@ import Footer from './components/Footer';
 import CreateArticle from './components/CreateArticle';
 import Login from './components/Login'
 import SingleArticle from './components/SingleArticle'
-
-const home =()=>{
-
-    return <h1>This is home page</h1>
-}
-const about =()=>{
-
-    return <h1 className='whiteBackground'>This is about page</h1>
-}
+import Signup from './components/Signup'
 
 ReactDOM.render( 
     <BrowserRouter>
     <div>
      <Navbar/>  
     <Route exact path="/" component={Welcome}/>
-    <Route path="/about" component={about}/>
-    <Route path="/home" component={home}/>
-    <Route path="/login" component={Login}/>
+    <Route path="/login" component={Login}/> 
+    <Route path="/signup" component={Signup}/>
     <Route path="/article/:slug" component={SingleArticle}/>
     <Route path="/article/create" component={CreateArticle}/>
      <Footer/>
