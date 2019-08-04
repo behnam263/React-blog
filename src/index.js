@@ -6,6 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CreateArticle from './components/CreateArticle';
+import Login from './components/Login'
+import SingleArticle from './components/SingleArticle'
 
 const home =()=>{
 
@@ -23,6 +25,8 @@ ReactDOM.render(
     <Route exact path="/" component={Welcome}/>
     <Route path="/about" component={about}/>
     <Route path="/home" component={home}/>
+    <Route path="/login" component={Login}/>
+    <Route path="/article/:slug" component={SingleArticle}/>
     <Route path="/article/create" component={CreateArticle}/>
      <Footer/>
     </div>
