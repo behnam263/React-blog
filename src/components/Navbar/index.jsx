@@ -15,7 +15,7 @@ const Navbar=()=>{
             <div className="topbar-right">
               <ul className="topbar-nav nav">
                 <li className="nav-item">
-                   <Link className="nav-link" to="/home">Home</Link>
+                   <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/article/create">Write new article</Link>
