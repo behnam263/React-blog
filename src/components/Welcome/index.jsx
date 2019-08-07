@@ -18,11 +18,11 @@ const Welcome =()=>{
                <hr/>  
               <Article/>  
               <nav className="flexbox mt-50 mb-50">
-  <a className="btn btn-white disabled">
-    <i className="ti-arrow-left fs-9 mr-4" /> Newer</a>
-  <a className="btn btn-white" href="#">Older
+  <button className="btn btn-white disabled">
+    <i className="ti-arrow-left fs-9 mr-4" /> Newer</button>
+  <button className="btn btn-white"  >Older
     <i className="ti-arrow-right fs-9 ml-4" />
-  </a>
+  </button>
 </nav>
             </div>
         </div>

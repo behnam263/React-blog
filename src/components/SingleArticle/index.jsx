@@ -16,16 +16,16 @@ const SingleArticle = ()=>{
             <br />
             <p>
               <span className="opacity-70 mr-8">By</span>
-              <a className="text-white" href="#">Hossein Shams</a>
+              <button className="text-white" >Hossein Shams</button>
             </p>
             <p>
               <img className="rounded-circle w-40" src={`${process.env.PUBLIC_URL}/assets/img/avatar/2.jpg`} alt="..." />
             </p>
           </div>
           <div className="col-12 align-self-end text-center">
-            <a className="scroll-down-1 scroll-down-inverse" href="#" data-scrollto="section-content">
+            <button className="scroll-down-1 scroll-down-inverse"  data-scrollto="section-content">
               <span />
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -96,10 +96,10 @@ const SingleArticle = ()=>{
                 whereas diverse meta-services. Continually orchestrate ubiquitous core competencies rather than market positioning
                 "outside the box" thinking. Dramatically redefine out-of-the-box schemas.</p>
               <div className="gap-multiline-items-1 mt-30">
-                <a className="badge badge-pill badge-default" href="#">Record</a>
-                <a className="badge badge-pill badge-default" href="#">Progress</a>
-                <a className="badge badge-pill badge-default" href="#">Customers</a>
-                <a className="badge badge-pill badge-default" href="#">News</a>
+                <button className="badge badge-pill badge-default" >Record</button>
+                <button className="badge badge-pill badge-default" >Progress</button>
+                <button className="badge badge-pill badge-default" >Customers</button>
+                <button className="badge badge-pill badge-default" >News</button>
               </div>
             </div>
           </div>
