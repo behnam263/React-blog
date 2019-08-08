@@ -12,23 +12,24 @@ import Signup from './components/Signup'
 
 
 const Main =withRouter((location)=>
-    {  
+    {
         return (
             <div>
                 {
-                    location.history.location.pathname!=='/login' &&
-                     <Navbar/> 
+                    location.history.location.pathname!=='/login' && location.history.location.pathname!=='/signup' &&
+                     <Navbar/>
                 }
- 
            <Route exact path="/" component={Welcome}/>
-           <Route path="/login" component={Login}/> 
+           <Route path="/login" component={Login}/>
            <Route path="/signup" component={Signup}/>
            <Route path="/article/:slug" component={SingleArticle}/>
            <Route path="/article/create" component={CreateArticle}/>
-            <Footer/>
+           {
+                    location.history.location.pathname!=='/login' && location.history.location.pathname!=='/signup' &&
+                    <Footer/>
+            }
            </div>
         );
-        
     }
 );
 
