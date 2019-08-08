@@ -1,5 +1,5 @@
 import React from 'react';
-import { validate } from 'indicative/validator'
+import {  validateAll } from 'indicative/validator'
 
 class Signup extends React.Component{
 constructor (){
@@ -8,7 +8,8 @@ this.state={
  name:'',
  email:'',
  password:'',
- passwordConfirm:''
+ password_confirmation:'',
+ errors:{}
 };
 
 }
@@ -18,12 +19,23 @@ const data=this.state;
 const rules={
 name:'required|string',
 email:'required|email',
-password:'required|string|min:6'
+password:'required|string|min:6|confirmed'
 };
-validate(data,rules)
- .then(()=>{})
+const messages={
+  required: (field) => `${field} is required`,
+'password.confirmed':'Confirmation is not correct',
+'email.email':'email is not correct',
+};
+validateAll(data,rules,messages)
+ .then(()=>{
+  console.log('suceess');
+ })
  .catch(errors=>{
-  console.log(errors);
+  const formattedErrors={};
+  errors.forEach(error=>formattedErrors[error.field] = error.message)
+  this.setState({
+    errors:formattedErrors
+  })
   })
 }
 
@@ -44,15 +56,18 @@ render(){
       <form className="form-type-material" onSubmit={this.handleSubmit} >
         <div className="form-group">
           <input type="text" name="name" className="form-control" placeholder="Username" onChange={this.handleInputchange} />
+          <small className="text-danger">{this.state.errors['name']}</small>
         </div>
         <div className="form-group">
           <input type="text" name="email" className="form-control" placeholder="Email address" onChange={this.handleInputchange} />
+          <small className="text-danger">{this.state.errors['email']}</small>
         </div>
         <div className="form-group">
           <input type="password" name="password" className="form-control" placeholder="Password" onChange={this.handleInputchange} />
+          <small className="text-danger">{this.state.errors['password']}</small>
         </div>
         <div className="form-group">
-          <input type="passwordConfirm" name="passwordConfirm" className="form-control" placeholder="Password (confirm)" onChange={this.handleInputchange} />
+          <input type="password"   name="password_confirmation" className="form-control" placeholder="Password (confirm)" onChange={this.handleInputchange} />
         </div>
         <br />
         <button className="btn btn-bold btn-block btn-primary" type="submit">Register</button>
